@@ -40,8 +40,10 @@ img {
 }
 
 body {
+  
   font-family: roboto, sans-serif;
   background: var(--white);
+
 }
 
 .list {
@@ -182,6 +184,7 @@ header {
 .header-mail {
   display: flex;
   align-items: center;
+  transition: color 200ms linear;
 }
 
 .header-mail:hover .post-phone-link{
@@ -196,13 +199,20 @@ header {
 .header-tel {
   display: flex;
   align-items: center;
+  transition: color 200ms linear;
 }
 
 .header-tel:hover .tel-phone-link{
   fill: var(--blue);
 }
 
+.header-link{
+  transition: color 200ms linear;
+}
 
+.link{
+  transition: color 200ms linear;
+}
 
 /*----------------------------Main---------------------------*/
 
@@ -254,11 +264,9 @@ header {
   margin-right: auto;
   margin-top: 30px;
   display: block;
+  transition:background-color 200ms linear, background-color 200ms linear;
 }
 
-button {
-  background-color: var(--blue);
-}
 
 button:hover {
   background-color: var(--dark-blue);
@@ -471,6 +479,7 @@ button:focus {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition:background-color 200ms linear, fill 200ms linear;
 }
 
 .workers-soc-link:hover,
@@ -526,6 +535,7 @@ button:focus {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition:border-color 200ms linear;
 }
 
 .klients-item {
@@ -540,6 +550,7 @@ button:focus {
 
 .klients-icon {
   fill: #afb1b8;
+  transition:fill 200ms linear;
 }
 
 .klients-link:hover .klients-icon,
@@ -624,6 +635,7 @@ button:focus {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition:background-color 200ms linear, fill 200ms linear;
 }
 
 .footer-soc-link:hover,
@@ -685,6 +697,7 @@ button:focus {
   line-height: 26px;
   letter-spacing: 0.03em;
   color: var(--dark-title);
+  transition:background-color 200ms linear, background-color 200ms linear;
 }
 
 .btn-list {
@@ -725,6 +738,30 @@ button:focus {
   background-color: var(--white);
 }
 
+.picture-image:hover .image-text {
+  transform: translateY(0);
+
+}
+
+.image-wrap{
+  position: relative;
+}
+
+.image-text{
+  position: absolute;
+  top: 0;
+  padding:63px 24px ;
+  color:var(--white);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  background-color: rgba(33, 150, 243, 0.9);
+  height: 100%;
+  transform: translateY(100%);
+  transition: transform 300ms linear;
+  overflow: auto;
+}
+
 .picture-title {
   font-weight: 700;
   font-size: 18px;
@@ -763,4 +800,52 @@ button:focus {
 .picture-image:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+/*----------Modal Window----------*/
+
+.backdrop {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 0;
+  transition: opacity 300ms linear,visibility 300ms linear;
+}
+
+.modal {
+ width: 528px;
+ min-height: 581px; 
+ background-color: var(--white);
+ border-radius: 4px;
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%) scale(1);
+ transition: transform 300ms linear;
+}
+
+.backdrop.is-hidden .modal{
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.modal-close {
+  width: 30px;
+  height: 30px;
+  background-color: var(--white);
+  border: 1px solid solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.backdrop.is-hidden{
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
