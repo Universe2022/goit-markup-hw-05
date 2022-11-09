@@ -179,12 +179,12 @@ header {
 .post-phone-link{
   fill: #757575;
   margin-right: 10px;
+  transition: color 2500ms cubic-bezier(0.4, 0, 0.2, 1), fill 2500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-mail {
   display: flex;
   align-items: center;
-  transition: color 200ms linear;
 }
 
 .header-mail:hover .post-phone-link{
@@ -194,25 +194,41 @@ header {
 .tel-phone-link{
   fill: #757575;
   margin-right: 10px;
+  transition: color 2500ms cubic-bezier(0.4, 0, 0.2, 1), fill 2500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-tel {
   display: flex;
   align-items: center;
-  transition: color 200ms linear;
+  
 }
 
 .header-tel:hover .tel-phone-link{
   fill: var(--blue);
 }
 
+/*
 .header-link{
   transition: color 200ms linear;
 }
+*/
+
 
 .link{
-  transition: color 200ms linear;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+
+
+.current{
+  opacity: 1;
+  width: inherit;
+  height: 4px;
+  transform: translateY(30px);
+  background-color:var(--dark-blue);
+  border-radius: 2px;
+  }
+
 
 /*----------------------------Main---------------------------*/
 
@@ -264,7 +280,7 @@ header {
   margin-right: auto;
   margin-top: 30px;
   display: block;
-  transition:background-color 200ms linear, background-color 200ms linear;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
@@ -414,6 +430,42 @@ button:focus {
   margin-top: 50px;
 }
 
+/*-----Upper block------*/
+
+.upper-picture{
+  position: relative;
+}
+
+
+.upper-block{
+  position: absolute;
+  width: 370px;
+  height: 70px;
+  top: 224px;
+  right: 0px;
+  background: rgba(47, 48, 58, 0.8);
+  }
+  
+  .block-title{
+  position: absolute;
+  top: 27px;
+  width: 100%;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  
+  color:var(--white);
+  }
+  
+  .block-picture{
+  position: relative;
+  }
+
 /*----------workers---------*/
 
 .about-workers {
@@ -479,7 +531,7 @@ button:focus {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition:background-color 200ms linear, fill 200ms linear;
+  transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .workers-soc-link:hover,
@@ -499,6 +551,7 @@ button:focus {
 
 .workers-soc-icon {
   fill: #afb1b8;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /*.workers-soc-icon{
@@ -535,7 +588,7 @@ button:focus {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition:border-color 200ms linear;
+  transition:border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .klients-item {
@@ -635,7 +688,7 @@ button:focus {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition:background-color 200ms linear, fill 200ms linear;
+  transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-soc-link:hover,
@@ -697,7 +750,7 @@ button:focus {
   line-height: 26px;
   letter-spacing: 0.03em;
   color: var(--dark-title);
-  transition:background-color 200ms linear, background-color 200ms linear;
+  transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn-list {
@@ -745,6 +798,7 @@ button:focus {
 
 .image-wrap{
   position: relative;
+  overflow: hidden;
 }
 
 .image-text{
@@ -849,3 +903,6 @@ button:focus {
   visibility: hidden;
   pointer-events: none;
 }
+
+
+
